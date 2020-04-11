@@ -8,7 +8,7 @@ I wanted to use [data](https://raw.githubusercontent.com/washingtonpost/data-pol
 
 Taking a look at the data, whites were most often killed by police in the timeframe provided. On average, from 2015 to 2017, 472 whites, 235 blacks, and 167 Hispanics were killed by police per year.  
 
-![]()
+![](https://github.com/mikekeith52/Police-shootings-insights/blob/master/img/blogpost3-image3.PNG)
 
 But in a country that is [72.4% white](https://www.census.gov/prod/cen2010/briefs/c2010br-02.pdf) according to the 2010 National Census, perhaps that is to be expected. What would be interesting is to adjust the numbers in the data by the percentage that each demographic comprises in the country. So, that's what I did, but there was one difficult part to this--what to do with the "unknown" race in the data.  
 
@@ -66,13 +66,13 @@ df1 <- url %>%
     html_table(fill=T)
 df1<-data.frame(df1)
 ```   
-![]()
+![](https://github.com/mikekeith52/Police-shootings-insights/blob/master/img/blogpost3-image2.PNG)
 
 Specifically, I used the percentage of whites in each state to control for demographic differences across the country. Since this data is old and does not account for the percentage of Asians in each state, perhaps there is a better way to control for such demographic differences, but I figured this would be good enough for my purposes. What doesn't matter is that the numbers are exactly correct, but rather, that the variation across states derived from the older dates is consistent with current data. I therefore imagine the better ways of doing this would not make a significant difference in final results, but it definitely would require a lot more work.  
 
 I then reran the models and discovered that all data pertaining to states became insignificant after controlling for demographic differences. This means I found no evidence that one's race makes a difference in any given state vs. another when it comes to this issue. I therefore decided to drop state-related variables and focus only on the other factors in the model. This left the model with 14 inputs that I used to predict 1 output--the race group of the individual killed. In the matrix below, we can see how each of these factors correlate with one another ("race_BHNO" meaning whether or not the suspect was black, Hispanic, Native American, or other; "MI_signs" being whether the suspect exhibited signs of mental illness).  
 
-!()[]
+![](https://github.com/mikekeith52/Police-shootings-insights/blob/master/img/blog_post3-image2.png)
 
 For a complete look at each of the variables in the final model, as well as summary statistics, see [here](https://onedrive.live.com/view.aspx?resid=25AB65ADF9C03E25!46953&ithint=file%2cxlsx&authkey=!AOA7gypB--f_Zf8).  
 
@@ -89,7 +89,7 @@ The significant factors determined to be highly indicative of one's race in the 
 
 In the boxplot below, we can see how age varies from race to race in the dataset, with the two predicted classes being shaded differently. Asians and whites share similar median ages in the data with one another, while the same can be said for blacks, Hispanics, Native Americans, and other.   
 
-![]()
+![](https://github.com/mikekeith52/Police-shootings-insights/blob/master/img/blog_post3-image3.PNG)
 
 Returning to the model output, the "intercept" was also very high in the positive direction, meaning that suspects killed by police were much more likely to be black, Hispanic, Native American, or "other race" for reasons not accounted for in the model. We cannot explain why that is by just using the data at hand. The factors that are controlled for in the model, however, have interesting interpretations.  
 If the assumption holds that there are not other factors that significantly affect both the inputs and output of the model, we can use the following interpretations of the statistically significant model estimates to inform our understanding of this subject:  
