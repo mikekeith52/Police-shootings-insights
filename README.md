@@ -56,7 +56,15 @@ I soon realized that the states with the highest percentage of minorities were a
 To control for this and "unbias" the models, I took data from the [Census Scope](http://www.censusscope.org/us/rank_race_nonhispaniclatino_white.html) online and added it to the model. The code on R I used to scrape this data is given below:  
 
 ```R
-
+# Scrape 2010 census data for perc of whites per state
+library(rvest)
+library(stringi)
+url <- "http://www.censusscope.org/us/rank_race_nonhispaniclatino_white.html"
+df1 <- url %>%
+    read_html() %>%
+    html_nodes(xpath='/html/body/table') %>%
+    html_table(fill=T)
+df1<-data.frame(df1)
 ```   
 ![]()
 
