@@ -102,3 +102,6 @@ Age: The younger one is when fatally shot by police, the more likely that indivi
 - **Toy weapon:** If the suspect killed was brandishing a toy weapon, he/she was about 36% more likely to have been white or Asian
 
 Since this is a "multi-variate" and not a simple logistic regression, we can say that the model interpretations above are in the context of "holding all other factors constant," helping us determine that these relationships are more likely to be causal and not just corollary. In other words, we have good evidence to believe that if all the assumptions of the model hold, these factors are deterministic of why certain races are more likely to be killed in fatal police encounters than others.  
+
+## If I Were to Do it Again
+If I were to repeat this analysis, I probably would have split the population between whites and blacks and would have used more models to see if I could maximize the predictive power of the model.
