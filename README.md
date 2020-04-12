@@ -91,7 +91,7 @@ In the boxplot below, we can see how age varies from race to race in the dataset
 
 ![](https://github.com/mikekeith52/Police-shootings-insights/blob/master/img/blog_post3-image3.PNG)
 
-Returning to the model output, the "intercept" was also very high in the positive direction, meaning that suspects killed by police were much more likely to be black, Hispanic, Native American, or "other race" for reasons not accounted for in the model. We cannot explain why that is by just using the data at hand. The factors that are controlled for in the model, however, have interesting interpretations.  
+Returning to the model output, the "intercept" was also very high in the positive direction, meaning that suspects killed by police were much more likely to be black, Hispanic, Native American, or "other race" for reasons not accounted for in the model. We cannot explain why that is by just using the data at hand. The factors that are controlled for in the model, however, have interesting interpretations.    
 If the assumption holds that there are not other factors that significantly affect both the inputs and output of the model, we can use the following interpretations of the statistically significant model estimates to inform our understanding of this subject:  
 
 - **Percentage of whites in state:** As the percentage of non-white people increases per state, the proportion of blacks, Hispanics, Native Americans, and "other race" killed by police increases almost exactly proportionally
