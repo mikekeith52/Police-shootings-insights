@@ -1,3 +1,5 @@
+### ANALYSIS PERFORMED 2018-09-12
+
 # Reset
 rm(list=ls())
 
@@ -6,6 +8,7 @@ set.seed(123)
 
 # Read data - from WaPo GitHub
 D<-read.csv("https://raw.githubusercontent.com/washingtonpost/data-police-shootings/master/fatal-police-shootings-data.csv")
+D<-D[D$date<='2019-09-12', ] # Added in 04/2020 to be able to recreate reported results
 
 ## Create functions
 # Create a function to show Information Criteria for comparing models
